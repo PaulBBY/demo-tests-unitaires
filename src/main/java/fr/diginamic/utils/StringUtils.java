@@ -14,7 +14,11 @@ public final class StringUtils {
 	 * @param rhs chaine 2
 	 * @return distance
 	 */
-	public static int levenshteinDistance(CharSequence lhs, CharSequence rhs) {
+	public static int levenshteinDistance(String lhs0, String rhs0) {
+		
+		CharSequence  lhs = lhs0.toUpperCase();
+		CharSequence rhs = rhs0.toUpperCase();
+		
 		int len0 = lhs.length() + 1;
 		int len1 = rhs.length() + 1;
 

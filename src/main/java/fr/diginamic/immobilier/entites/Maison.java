@@ -26,6 +26,10 @@ public class Maison {
 		
 		// On commence donc par créer un tableau temporaire appelé newTab
 		// qui a une taille égale à la tableau du tableau pieces+1
+		if(nvPiece == null) {
+			return;
+		}
+		
 		Piece[] newTab = new Piece[pieces.length+1];
 		
 		// On déverse toutes les pièces du tableau pieces dans newTab
@@ -42,7 +46,7 @@ public class Maison {
 	}
 	
 	public int nbPieces() {
-		return pieces.length-1;
+		return pieces.length;
 	}
 
 	/** Retourne la superficie d'un étage
@@ -54,7 +58,7 @@ public class Maison {
 
 		for (int i = 0; i < pieces.length; i++) {
 			if (choixEtage == this.pieces[i].getNumEtage()) {
-				superficieEtage = this.pieces[i].getSuperficie();
+				superficieEtage += this.pieces[i].getSuperficie();
 			}
 		}
 
@@ -68,7 +72,7 @@ public class Maison {
 	public double superficieTypePiece(String typePiece) {
 		double superficie = 0;
 
-		for (int i = 1; i < pieces.length; i++) {
+		for (int i = 0; i < pieces.length; i++) {
 			if (typePiece!=null && typePiece.equals(this.pieces[i].getType())) {
 				superficie = superficie + this.pieces[i].getSuperficie();
 			}

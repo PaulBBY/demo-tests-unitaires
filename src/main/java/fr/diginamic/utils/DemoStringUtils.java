@@ -9,7 +9,9 @@ public class DemoStringUtils {
 		//TODO Mettre en place des tests unitaires permettant de vérifier que la classe fonctionne
 		//     dans tous les cas
 		System.out.println(StringUtils.levenshteinDistance("Chine", "Chien"));
-		System.out.println(StringUtils.levenshteinDistance("Vienne", "Sienne"));
+		System.out.println(StringUtils.levenshteinDistance("sienne", "Sienne"));
+		System.out.println(StringUtils.levenshteinDistance("", "Sienne"));
+
 		
 		
 	}
